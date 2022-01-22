@@ -75,7 +75,7 @@ class OrderViewModel : ViewModel() {
             previousEntreePrice = _entree.value!!.price
         // TODO: if _subtotal.value is not null subtract the previous entree price from the current
         //  subtotal value. This ensures that we only charge for the currently selected entree.
-        _subtotal.value?.minus(previousEntreePrice)
+        _subtotal.value = _subtotal.value?.minus(previousEntreePrice)
         // TODO: set the current entree value to the menu item corresponding to the passed in string
         _entree.value = menuItems[entree]
         // TODO: update the subtotal to reflect the price of the selected entree.
@@ -91,7 +91,7 @@ class OrderViewModel : ViewModel() {
             previousSidePrice = _side.value!!.price
         // TODO: if _subtotal.value is not null subtract the previous side price from the current
         //  subtotal value. This ensures that we only charge for the currently selected side.
-        _subtotal.value?.minus(previousSidePrice)
+        _subtotal.value = _subtotal.value?.minus(previousSidePrice)
 
         // TODO: set the current side value to the menu item corresponding to the passed in string
         _side.value = menuItems[side]
@@ -111,7 +111,7 @@ class OrderViewModel : ViewModel() {
         // TODO: if _accompaniment.value is not null subtract the previous accompaniment price from
         //  the current subtotal value. This ensures that we only charge for the currently selected
         //  accompaniment.
-        _subtotal.value?.minus(previousAccompanimentPrice)
+        _subtotal.value = _subtotal.value?.minus(previousAccompanimentPrice)
         // TODO: set the current accompaniment value to the menu item corresponding to the passed in
         //  string
         _accompaniment.value = menuItems[accompaniment]
@@ -126,7 +126,7 @@ class OrderViewModel : ViewModel() {
         // TODO: if _subtotal.value is not null, update it to reflect the price of the recently
         //  added item.
         if (_subtotal.value != null)
-            _subtotal.value!!.plus(itemPrice)
+            _subtotal.value = _subtotal.value!!.plus(itemPrice)
         else {
             //  Otherwise, set _subtotal.value to equal the price of the item.
             _subtotal.value = itemPrice
@@ -156,7 +156,7 @@ class OrderViewModel : ViewModel() {
         _entree.value = null
         _side.value = null
         _accompaniment.value = null
-        _subtotal.value = null
+        _subtotal.value = 0.0
         _total.value = 0.0
         _tax.value = 0.0
     }

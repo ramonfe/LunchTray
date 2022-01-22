@@ -23,9 +23,17 @@ public class FragmentSideMenuBindingImpl extends FragmentSideMenuBinding impleme
     private final android.widget.ScrollView mboundView0;
     // variables
     @Nullable
-    private final android.view.View.OnClickListener mCallback6;
+    private final android.view.View.OnClickListener mCallback13;
     @Nullable
-    private final android.view.View.OnClickListener mCallback5;
+    private final android.view.View.OnClickListener mCallback11;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback8;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback12;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback10;
+    @Nullable
+    private final android.view.View.OnClickListener mCallback9;
     // values
     // listeners
     // Inverse Binding Event Handlers
@@ -71,8 +79,12 @@ public class FragmentSideMenuBindingImpl extends FragmentSideMenuBinding impleme
         this.soupPrice.setTag(null);
         setRootTag(root);
         // listeners
-        mCallback6 = new com.example.lunchtray.generated.callback.OnClickListener(this, 2);
-        mCallback5 = new com.example.lunchtray.generated.callback.OnClickListener(this, 1);
+        mCallback13 = new com.example.lunchtray.generated.callback.OnClickListener(this, 6);
+        mCallback11 = new com.example.lunchtray.generated.callback.OnClickListener(this, 4);
+        mCallback8 = new com.example.lunchtray.generated.callback.OnClickListener(this, 1);
+        mCallback12 = new com.example.lunchtray.generated.callback.OnClickListener(this, 5);
+        mCallback10 = new com.example.lunchtray.generated.callback.OnClickListener(this, 3);
+        mCallback9 = new com.example.lunchtray.generated.callback.OnClickListener(this, 2);
         invalidateAll();
     }
 
@@ -219,8 +231,12 @@ public class FragmentSideMenuBindingImpl extends FragmentSideMenuBinding impleme
         if ((dirtyFlags & 0x4L) != 0) {
             // api target 1
 
-            this.cancelButton.setOnClickListener(mCallback5);
-            this.nextButton.setOnClickListener(mCallback6);
+            this.cancelButton.setOnClickListener(mCallback12);
+            this.nextButton.setOnClickListener(mCallback13);
+            this.potatoes.setOnClickListener(mCallback10);
+            this.rice.setOnClickListener(mCallback11);
+            this.salad.setOnClickListener(mCallback8);
+            this.soup.setOnClickListener(mCallback9);
         }
         if ((dirtyFlags & 0x6L) != 0) {
             // api target 1
@@ -243,7 +259,7 @@ public class FragmentSideMenuBindingImpl extends FragmentSideMenuBinding impleme
     // callback impls
     public final void _internalCallbackOnClick(int sourceId , android.view.View callbackArg_0) {
         switch(sourceId) {
-            case 2: {
+            case 6: {
                 // localize variables for thread safety
                 // sideMenuFragment != null
                 boolean sideMenuFragmentJavaLangObjectNull = false;
@@ -260,7 +276,43 @@ public class FragmentSideMenuBindingImpl extends FragmentSideMenuBinding impleme
                 }
                 break;
             }
+            case 4: {
+                // localize variables for thread safety
+                // viewModel
+                com.example.lunchtray.model.OrderViewModel viewModel = mViewModel;
+                // viewModel != null
+                boolean viewModelJavaLangObjectNull = false;
+
+
+
+                viewModelJavaLangObjectNull = (viewModel) != (null);
+                if (viewModelJavaLangObjectNull) {
+
+
+
+                    viewModel.setSide(rice.getResources().getString(R.string.rice));
+                }
+                break;
+            }
             case 1: {
+                // localize variables for thread safety
+                // viewModel
+                com.example.lunchtray.model.OrderViewModel viewModel = mViewModel;
+                // viewModel != null
+                boolean viewModelJavaLangObjectNull = false;
+
+
+
+                viewModelJavaLangObjectNull = (viewModel) != (null);
+                if (viewModelJavaLangObjectNull) {
+
+
+
+                    viewModel.setSide(salad.getResources().getString(R.string.salad));
+                }
+                break;
+            }
+            case 5: {
                 // localize variables for thread safety
                 // sideMenuFragment != null
                 boolean sideMenuFragmentJavaLangObjectNull = false;
@@ -274,6 +326,42 @@ public class FragmentSideMenuBindingImpl extends FragmentSideMenuBinding impleme
 
 
                     sideMenuFragment.cancelOrder();
+                }
+                break;
+            }
+            case 3: {
+                // localize variables for thread safety
+                // viewModel
+                com.example.lunchtray.model.OrderViewModel viewModel = mViewModel;
+                // viewModel != null
+                boolean viewModelJavaLangObjectNull = false;
+
+
+
+                viewModelJavaLangObjectNull = (viewModel) != (null);
+                if (viewModelJavaLangObjectNull) {
+
+
+
+                    viewModel.setSide(potatoes.getResources().getString(R.string.potatoes));
+                }
+                break;
+            }
+            case 2: {
+                // localize variables for thread safety
+                // viewModel
+                com.example.lunchtray.model.OrderViewModel viewModel = mViewModel;
+                // viewModel != null
+                boolean viewModelJavaLangObjectNull = false;
+
+
+
+                viewModelJavaLangObjectNull = (viewModel) != (null);
+                if (viewModelJavaLangObjectNull) {
+
+
+
+                    viewModel.setSide(soup.getResources().getString(R.string.soup));
                 }
                 break;
             }
